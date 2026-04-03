@@ -1,18 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giovanni Bestana Fernandes — Dev & Builder</title>
-    <link rel="stylesheet" href="/teste/css/styles.css">
-    <link rel="stylesheet" href="/teste/css/lightbox.css">
+    <link id="themeStylesheet" rel="stylesheet" href="/teste/css/styles.css">
+    <link id="lightboxStylesheet" rel="stylesheet" href="/teste/css/lightbox.css">
     <script type="module" src="/teste/js/main.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ── THEME TOGGLE BUTTON ── */
+        .theme-toggle {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 200;
+
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text-muted);
+            font-size: 16px;
+            cursor: pointer;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            transition: all 0.25s ease;
+        }
+
+        .theme-toggle:hover {
+            color: var(--primary);
+            border-color: rgba(5, 150, 105, 0.4);
+            transform: scale(1.08);
+        }
+    </style>
 </head>
+
 <body>
 
+    <button class="theme-toggle" id="themeToggle" title="Alternar tema">
+        <i class="fa-solid fa-moon" id="themeIcon"></i>
+    </button>
     <!-- NAV -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -89,12 +127,8 @@
                     <div class="hero-photo-wrapper">
                         <div class="hero-photo-frame">
                             <!-- SUBSTITUA o src pela sua foto -->
-                            <img
-                                src="https://placehold.co/480x580/111115/10b981?text=Sua+Foto+Aqui"
-                                alt="Giovanni Bestana"
-                                class="hero-photo"
-                                id="heroPhoto"
-                            >
+                            <img src="https://placehold.co/480x580/111115/10b981?text=Sua+Foto+Aqui"
+                                alt="Giovanni Bestana" class="hero-photo" id="heroPhoto">
                             <div class="hero-photo-overlay"></div>
                         </div>
                         <!-- Badge flutuante: tech -->
@@ -147,11 +181,8 @@
                     <div class="about-photo-col">
                         <div class="about-photo-wrap">
                             <!-- SUBSTITUA pela sua foto -->
-                            <img
-                                src="https://placehold.co/400x500/111115/10b981?text=Foto+Perfil"
-                                alt="Giovanni Bestana"
-                                class="about-photo"
-                            >
+                            <img src="https://placehold.co/400x500/111115/10b981?text=Foto+Perfil"
+                                alt="Giovanni Bestana" class="about-photo">
                             <!-- Stickers ao redor -->
                             <div class="about-sticker sticker-1">
                                 <span>C#</span>
@@ -186,11 +217,16 @@
 
                         <!-- Data object estilizado -->
                         <div class="card about-code-card">
-                            <div class="code-line"><span class="code-key">nome</span>: <span class="code-val">"Giovanni Bestana Fernandes"</span>,</div>
-                            <div class="code-line"><span class="code-key">cargo</span>: <span class="code-val">"Full Stack Dev & Software Engineer"</span>,</div>
-                            <div class="code-line"><span class="code-key">base</span>: <span class="code-val">"Brasil 🇧🇷"</span>,</div>
-                            <div class="code-line"><span class="code-key">open_to</span>: <span class="code-val">"remoto / híbrido"</span>,</div>
-                            <div class="code-line"><span class="code-key">superpoder</span>: <span class="code-val">"pensar como dono"</span>,</div>
+                            <div class="code-line"><span class="code-key">nome</span>: <span class="code-val">"Giovanni
+                                    Bestana Fernandes"</span>,</div>
+                            <div class="code-line"><span class="code-key">cargo</span>: <span class="code-val">"Full
+                                    Stack Dev & Software Engineer"</span>,</div>
+                            <div class="code-line"><span class="code-key">base</span>: <span class="code-val">"Brasil
+                                    🇧🇷"</span>,</div>
+                            <div class="code-line"><span class="code-key">open_to</span>: <span class="code-val">"remoto
+                                    / híbrido"</span>,</div>
+                            <div class="code-line"><span class="code-key">superpoder</span>: <span
+                                    class="code-val">"pensar como dono"</span>,</div>
                         </div>
                     </div>
                 </div>
@@ -210,17 +246,20 @@
                     <div class="manifesto-card card">
                         <div class="manifesto-icon"><i class="fa-solid fa-brain"></i></div>
                         <h4>Penso como fundador</h4>
-                        <p>Não apenas executo tickets. Questiono o problema por trás do problema e entrego a solução certa, não só a pedida.</p>
+                        <p>Não apenas executo tickets. Questiono o problema por trás do problema e entrego a solução
+                            certa, não só a pedida.</p>
                     </div>
                     <div class="manifesto-card card manifesto-featured">
                         <div class="manifesto-icon featured"><i class="fa-solid fa-bolt"></i></div>
                         <h4>Velocidade com qualidade</h4>
-                        <p>Entrego rápido sem sacrificar estrutura. Código limpo, escalável e manutenível — porque amanhã alguém vai precisar mexer nisso.</p>
+                        <p>Entrego rápido sem sacrificar estrutura. Código limpo, escalável e manutenível — porque
+                            amanhã alguém vai precisar mexer nisso.</p>
                     </div>
                     <div class="manifesto-card card">
                         <div class="manifesto-icon"><i class="fa-solid fa-handshake"></i></div>
                         <h4>Comunicação direta</h4>
-                        <p>Sem enrolação. Você sabe exatamente o que está sendo feito, quando fica pronto e o que pode impactar o prazo.</p>
+                        <p>Sem enrolação. Você sabe exatamente o que está sendo feito, quando fica pronto e o que pode
+                            impactar o prazo.</p>
                     </div>
                     <div class="manifesto-card card">
                         <div class="manifesto-icon"><i class="fa-solid fa-chart-line"></i></div>
@@ -300,7 +339,8 @@
                     <div class="chat-init-bar">
                         <span class="code-prompt">$</span>
                         <span> ./init_ai.sh --modo="recruiter"</span>
-                        <p class="chat-welcome">👋 Olá! Sou o assistente de IA deste portfólio. Pergunte sobre habilidades, projetos ou disponibilidade do Giovanni.</p>
+                        <p class="chat-welcome">👋 Olá! Sou o assistente de IA deste portfólio. Pergunte sobre
+                            habilidades, projetos ou disponibilidade do Giovanni.</p>
                     </div>
                     <div class="chat-messages" id="chatMessages">
                         <div id="suggestionsContainer" style="margin-bottom: 16px;"></div>
@@ -330,18 +370,16 @@
                     <!-- Texto de chamada -->
                     <div class="contact-headline">
                         <h3>Tem um projeto em mente?<br><span class="text-green">Vamos construir juntos.</span></h3>
-                        <p>Seja um produto novo, uma feature crítica ou uma consultoria rápida — estou disponível para conversar.</p>
+                        <p>Seja um produto novo, uma feature crítica ou uma consultoria rápida — estou disponível para
+                            conversar.</p>
                     </div>
 
                     <!-- Foto + links -->
                     <div class="contact-body">
                         <div class="contact-photo-wrap">
                             <!-- SUBSTITUA pela sua foto -->
-                            <img
-                                src="https://placehold.co/200x200/111115/10b981?text=Foto"
-                                alt="Giovanni Bestana"
-                                class="contact-photo"
-                            >
+                            <img src="https://placehold.co/200x200/111115/10b981?text=Foto" alt="Giovanni Bestana"
+                                class="contact-photo">
                         </div>
                         <div class="card contact-card">
                             <p class="contact-cmd">
@@ -385,13 +423,41 @@
             <div class="lightbox-footer">
                 <div id="lightbox-counter" class="lightbox-counter">1/10</div>
                 <div class="lightbox-zoom">
-                    <button id="zoom-in" class="zoom-btn" aria-label="Aumentar zoom"><i class="fas fa-search-plus"></i></button>
-                    <button id="zoom-out" class="zoom-btn" aria-label="Reduzir zoom"><i class="fas fa-search-minus"></i></button>
-                    <button id="zoom-reset" class="zoom-btn" aria-label="Resetar zoom"><i class="fas fa-sync-alt"></i></button>
+                    <button id="zoom-in" class="zoom-btn" aria-label="Aumentar zoom"><i
+                            class="fas fa-search-plus"></i></button>
+                    <button id="zoom-out" class="zoom-btn" aria-label="Reduzir zoom"><i
+                            class="fas fa-search-minus"></i></button>
+                    <button id="zoom-reset" class="zoom-btn" aria-label="Resetar zoom"><i
+                            class="fas fa-sync-alt"></i></button>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        const BASE_PATH = '/teste/css/';
+        const toggle = document.getElementById('themeToggle');
+        const icon = document.getElementById('themeIcon');
+        const mainCSS = document.getElementById('themeStylesheet');
+        const lbCSS = document.getElementById('lightboxStylesheet');
 
+        let isDark = true;
+
+        toggle.addEventListener('click', () => {
+            isDark = !isDark;
+
+            if (isDark) {
+                mainCSS.href = BASE_PATH + 'styles.css';
+                lbCSS.href = BASE_PATH + 'lightbox.css';
+                icon.className = 'fa-solid fa-moon';
+                toggle.title = 'Tema escuro ativo — clique para claro';
+            } else {
+                mainCSS.href = BASE_PATH + 'styles-light.css';
+                lbCSS.href = BASE_PATH + 'lightbox-light.css';
+                icon.className = 'fa-solid fa-sun';
+                toggle.title = 'Tema claro ativo — clique para escuro';
+            }
+        });
+    </script>
 </body>
+
 </html>
