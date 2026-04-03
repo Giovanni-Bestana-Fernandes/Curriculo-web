@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Silva — Dev & Builder</title>
+    <link rel="stylesheet" href="/teste/css/styles.css">
+    <link rel="stylesheet" href="/teste/css/lightbox.css">
+    <script type="module" src="/teste/js/main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="nav-logo-bracket">{</span>
+                GBF
+                <span class="nav-logo-bracket">}</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#about"><span>01.</span>sobre</a>
+                <a href="#manifesto"><span>02.</span>manifesto</a>
+                <a href="#skills"><span>03.</span>arsenal</a>
+                <a href="#experience"><span>04.</span>jornada</a>
+                <a href="#projects"><span>05.</span>projetos</a>
+                <a href="#ai-chat"><span>06.</span>ai_chat</a>
+                <a href="#contact"><span>07.</span>contato</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+
+    <main>
+
+        <!--  HERO  -->
+        <section class="hero-section">
+            <div class="hero-grid-bg"></div>
+
+            <div class="container hero-container">
+
+                <div class="hero-left">
+                    <div class="hero-tag">
+                        <span class="hero-tag-dot"></span>
+                        Disponível para novos projetos
+                    </div>
+
+                    <h1 class="hero-title">
+                        Não sou<br>
+                        mais um<br>
+                        <span class="hero-title-accent">desenvolvedor.</span>
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        Sou o profissional que transforma ideias em produtos reais.
+                        Entrego código que <em>resolve problemas de negócio</em>,
+                        não só funcionalidade técnica.
+                    </p>
+
+                    <div class="hero-cta-row">
+                        <a href="#projects" class="btn-primary">Ver meus projetos</a>
+                        <a href="#contact" class="btn-ghost">Vamos conversar →</a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="hero-stat-value">50+</span>
+                            <span class="hero-stat-label">projetos entregues</span>
+                        </div>
+                        <div class="hero-stat-divider"></div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-value">5+</span>
+                            <span class="hero-stat-label">anos de mercado</span>
+                        </div>
+                        <div class="hero-stat-divider"></div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-value">∞</span>
+                            <span class="hero-stat-label">cafés por linha</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lado direito: foto + terminal flutuante -->
+                <div class="hero-right">
+                    <!-- Foto principal -->
+                    <div class="hero-photo-wrapper">
+                        <div class="hero-photo-frame">
+                            <!-- SUBSTITUA o src pela sua foto -->
+                            <img
+                                src="https://placehold.co/480x580/111115/10b981?text=Sua+Foto+Aqui"
+                                alt="Giovanni Bestana"
+                                class="hero-photo"
+                                id="heroPhoto"
+                            >
+                            <div class="hero-photo-overlay"></div>
+                        </div>
+                        <!-- Badge flutuante: tech -->
+                        <div class="hero-badge badge-top-right">
+                            <span class="badge-dot"></span>
+                            Full Stack
+                        </div>
+                        <!-- Badge flutuante: anos -->
+                        <div class="hero-badge badge-bottom-left">
+                            <i class="fa-solid fa-code"></i>
+                            4 anos de código
+                        </div>
+                    </div>
+
+                    <!-- Terminal flutuante -->
+                    <div class="hero-terminal terminal-window animate-pulse-glow">
+                        <div class="terminal-header">
+                            <div class="terminal-dot red"></div>
+                            <div class="terminal-dot yellow"></div>
+                            <div class="terminal-dot green"></div>
+                            <span class="terminal-title">~/stack — zsh</span>
+                        </div>
+                        <div class="terminal-body">
+                            <div id="heroTerminalContent"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="scroll-indicator">
+                <div class="scroll-mouse">
+                    <div class="scroll-dot"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about">
+            <div class="container">
+                <div class="section-title">
+                    <span class="section-number">01.</span>
+                    <h2>sobre_mim()</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="about-grid">
+                    <!-- Coluna foto -->
+                    <div class="about-photo-col">
+                        <div class="about-photo-wrap">
+                            <!-- SUBSTITUA pela sua foto -->
+                            <img
+                                src="https://placehold.co/400x500/111115/10b981?text=Foto+Perfil"
+                                alt="Giovanni Bestana"
+                                class="about-photo"
+                            >
+                            <!-- Stickers ao redor -->
+                            <div class="about-sticker sticker-1">
+                                <span>C#</span>
+                            </div>
+                            <div class="about-sticker sticker-2">
+                                <span>SQL</span>
+                            </div>
+                            <div class="about-sticker sticker-3">
+                                <i class="fa-solid fa-rocket"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coluna texto -->
+                    <div class="about-text-col">
+                        <h3 class="about-headline">
+                            Eu não entrego código.<br>
+                            Eu entrego <span class="text-green">resultados.</span>
+                        </h3>
+
+                        <p class="about-body">
+                            Tenho mais de 5 anos construindo produtos digitais que realmente funcionam.
+                            Não sou o tipo de dev que some atrás de uma tela e aparece semanas depois com
+                            algo que não resolve nada. Gosto de entender o negócio, questionar requisitos
+                            e propor soluções que fazem sentido.
+                        </p>
+                        <p class="about-body">
+                            Já passei por startups em fase seed, empresas em crescimento acelerado e projetos
+                            solo. Essa variedade me ensinou a ser direto, eficiente e a valorizar o que
+                            realmente importa: <strong>software que gera valor.</strong>
+                        </p>
+
+                        <!-- Data object estilizado -->
+                        <div class="card about-code-card">
+                            <div class="code-line"><span class="code-key">nome</span>: <span class="code-val">"Giovanni Bestana Fernandes"</span>,</div>
+                            <div class="code-line"><span class="code-key">cargo</span>: <span class="code-val">"Full Stack Dev & Software Engineer"</span>,</div>
+                            <div class="code-line"><span class="code-key">base</span>: <span class="code-val">"Brasil 🇧🇷"</span>,</div>
+                            <div class="code-line"><span class="code-key">open_to</span>: <span class="code-val">"remote / híbrido"</span>,</div>
+                            <div class="code-line"><span class="code-key">superpoder</span>: <span class="code-val">"pensar como dono"</span>,</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--  MANIFESTO  -->
+        <section id="manifesto" class="manifesto-section">
+            <div class="container">
+                <div class="section-title">
+                    <span class="section-number">02.</span>
+                    <h2>manifesto()</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="manifesto-grid">
+                    <div class="manifesto-card card">
+                        <div class="manifesto-icon"><i class="fa-solid fa-brain"></i></div>
+                        <h4>Penso como fundador</h4>
+                        <p>Não apenas executo tickets. Questiono o problema por trás do problema e entrego a solução certa, não só a pedida.</p>
+                    </div>
+                    <div class="manifesto-card card manifesto-featured">
+                        <div class="manifesto-icon featured"><i class="fa-solid fa-bolt"></i></div>
+                        <h4>Velocidade com qualidade</h4>
+                        <p>Entrego rápido sem sacrificar estrutura. Código limpo, escalável e manutenível — porque amanhã alguém vai precisar mexer nisso.</p>
+                    </div>
+                    <div class="manifesto-card card">
+                        <div class="manifesto-icon"><i class="fa-solid fa-handshake"></i></div>
+                        <h4>Comunicação direta</h4>
+                        <p>Sem enrolação. Você sabe exatamente o que está sendo feito, quando fica pronto e o que pode impactar o prazo.</p>
+                    </div>
+                    <div class="manifesto-card card">
+                        <div class="manifesto-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <h4>Foco em resultado</h4>
+                        <p>Toda linha de código serve a um propósito de negócio. Se não serve, não deveria estar lá.</p>
+                    </div>
+                </div>
+
+                <!-- Frase de impacto -->
+                <div class="manifesto-quote">
+                    <span class="quote-bar"></span>
+                    <blockquote>
+                        "A maioria dos devs entrega o que você pediu.<br>
+                        Eu entrego o que você <em>precisava</em>."
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!--  SKILLS  -->
+        <section id="skills">
+            <div class="container">
+                <div class="section-title">
+                    <span class="section-number">03.</span>
+                    <h2>arsenal[]</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="grid-4" id="skillsContainer"></div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience">
+            <div class="container">
+                <div class="section-title">
+                    <span class="section-number">04.</span>
+                    <h2>jornada.log</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="timeline" id="timelineContainer"></div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects">
+            <div class="container">
+                <div class="section-title">
+                    <span class="section-number">05.</span>
+                    <h2>projetos.git</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="grid-2" id="projectsContainer"></div>
+            </div>
+        </section>
+
+        <!-- AI CHAT -->
+        <section id="ai-chat">
+            <div class="container">
+                <div class="section-title">
+                    <span class="section-number">06.</span>
+                    <h2>ai_chat.py</h2>
+                    <span class="section-badge">✨ IA</span>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="chat-intro">
+                    <p>Curioso sobre minha experiência? Pergunte para a IA do portfólio. Ela sabe tudo sobre mim.</p>
+                </div>
+
+                <div class="terminal-window chat-window" style="max-width: 700px; margin: 0 auto;">
+                    <div class="terminal-header">
+                        <div class="terminal-dot red"></div>
+                        <div class="terminal-dot yellow"></div>
+                        <div class="terminal-dot green"></div>
+                        <span class="terminal-title">ai-recruiter-chat — bash</span>
+                    </div>
+                    <div class="chat-init-bar">
+                        <span class="code-prompt">$</span>
+                        <span> ./init_ai.sh --modo="recruiter"</span>
+                        <p class="chat-welcome">👋 Olá! Sou o assistente de IA deste portfólio. Pergunte sobre habilidades, projetos ou disponibilidade do João.</p>
+                    </div>
+                    <div class="chat-messages" id="chatMessages">
+                        <div id="suggestionsContainer" style="margin-bottom: 16px;"></div>
+                        <div id="messageList"></div>
+                        <div id="typingIndicator" style="display: none;">
+                            <div class="typing-indicator"><span></span><span></span><span></span></div>
+                        </div>
+                    </div>
+                    <div class="chat-input-bar">
+                        <span class="code-prompt">&gt;</span>
+                        <input type="text" id="chatInput" placeholder="Digite sua pergunta...">
+                        <button id="sendBtn">➤</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-title" style="justify-content: center;">
+                    <span class="section-number">07.</span>
+                    <h2>contato.sh</h2>
+                </div>
+
+                <div class="contact-wrapper">
+                    <!-- Texto de chamada -->
+                    <div class="contact-headline">
+                        <h3>Tem um projeto em mente?<br><span class="text-green">Vamos construir juntos.</span></h3>
+                        <p>Seja um produto novo, uma feature crítica ou uma consultoria rápida — estou disponível para conversar.</p>
+                    </div>
+
+                    <!-- Foto + links -->
+                    <div class="contact-body">
+                        <div class="contact-photo-wrap">
+                            <!-- SUBSTITUA pela sua foto -->
+                            <img
+                                src="https://placehold.co/200x200/111115/10b981?text=Foto"
+                                alt="João Silva"
+                                class="contact-photo"
+                            >
+                        </div>
+                        <div class="card contact-card">
+                            <p class="contact-cmd">
+                                <span class="code-prompt">$</span> ./conectar.sh --modo="bora trocar uma ideia"
+                            </p>
+                            <div id="contactLinks"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>
+                <span class="text-green">{">"}</span>
+                Feito com <span class="footer-heart">♥</span> e muito <span class="text-green">código</span>
+                © 2024 João Silva
+            </p>
+        </footer>
+    </main>
+
+    <!-- Modal projetos -->
+    <div id="projectModal" class="modal" style="display: none;"></div>
+
+    <!-- Lightbox -->
+    <div id="lightbox-modal" class="lightbox">
+        <div class="lightbox-container">
+            <button id="lightbox-close" class="lightbox-close" aria-label="Fechar galeria">
+                <i class="fas fa-times"></i>
+            </button>
+            <button id="lightbox-prev" class="lightbox-nav prev" aria-label="Foto anterior">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="lightbox-content">
+                <div id="lightbox-slider" class="lightbox-slider"></div>
+            </div>
+            <button id="lightbox-next" class="lightbox-nav next" aria-label="Próxima foto">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="lightbox-footer">
+                <div id="lightbox-counter" class="lightbox-counter">1/10</div>
+                <div class="lightbox-zoom">
+                    <button id="zoom-in" class="zoom-btn" aria-label="Aumentar zoom"><i class="fas fa-search-plus"></i></button>
+                    <button id="zoom-out" class="zoom-btn" aria-label="Reduzir zoom"><i class="fas fa-search-minus"></i></button>
+                    <button id="zoom-reset" class="zoom-btn" aria-label="Resetar zoom"><i class="fas fa-sync-alt"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

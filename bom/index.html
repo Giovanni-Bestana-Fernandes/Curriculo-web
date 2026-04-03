@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Portfolio | Terminal Style</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/lightbox.css">
+    <script type="module" src="./js/main.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#"
+                style="font-family: monospace; color: var(--primary); font-weight: bold; text-decoration: none;">&lt;dev
+                /&gt;</a>
+            <div class="nav-links" id="navLinks">
+                <a href="#about"><span>01.</span>sobre_mim()</a>
+                <a href="#skills"><span>02.</span>habilidades[]</a>
+                <a href="#experience"><span>03.</span>experiencia.log</a>
+                <a href="#projects"><span>04.</span>projetos.git</a>
+                <a href="#ai-chat"><span>05.</span>ai_chat.py</a>
+                <a href="#contact"><span>06.</span>contato.sh</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section style="min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+            <div class="container">
+                <div class="terminal-window animate-pulse-glow">
+                    <div class="terminal-header">
+                        <div class="terminal-dot red"></div>
+                        <div class="terminal-dot yellow"></div>
+                        <div class="terminal-dot green"></div>
+                        <span
+                            style="font-family: monospace; font-size: 11px; color: var(--text-muted); margin-left: 8px;">~/portfolio
+                            — bash</span>
+                    </div>
+                    <div style="padding: 32px;">
+                        <div style="color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">
+                            <span style="color: var(--primary);">$</span> cat sobre_mim.txt
+                        </div>
+                        <div id="heroContent" style="opacity: 0;"></div>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: center; margin-top: 48px;">
+                    <div
+                        style="width: 30px; height: 48px; border: 2px solid rgba(16, 185, 129, 0.3); border-radius: 24px; display: flex; justify-content: center; padding-top: 8px;">
+                        <div
+                            style="width: 4px; height: 8px; background: var(--primary); border-radius: 2px; animation: float 1.5s ease-in-out infinite;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <div class="section-title">
+                    <span class="section-number">01.</span>
+                    <h2>sobre_mim()</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="grid-2" style="gap: 40px;">
+                    <div class="card">
+                        <div style="font-family: monospace; font-size: 13px;">
+                            <span style="color: var(--accent);">const</span> <span
+                                style="color: var(--secondary);">dev</span> = {"{"}
+                        </div>
+                        <div
+                            style="padding-left: 24px; margin: 12px 0; font-family: monospace; font-size: 13px; line-height: 1.8;">
+                            <div><span style="color: #06b6d4;">nome</span>: <span style="color: var(--primary);">"João
+                                    Silva"</span>,</div>
+                            <div><span style="color: #06b6d4;">cargo</span>: <span
+                                    style="color: var(--primary);">"Desenvolvedor Full Stack"</span>,</div>
+                            <div><span style="color: #06b6d4;">experiencia</span>: <span
+                                    style="color: var(--primary);">"5+ anos"</span>,</div>
+                            <div><span style="color: #06b6d4;">localizacao</span>: <span
+                                    style="color: var(--primary);">"Brasil"</span>,</div>
+                            <div><span style="color: #06b6d4;">paixao</span>: <span
+                                    style="color: var(--primary);">"Transformar ideias em código"</span>,</div>
+                        </div>
+                        <div style="font-family: monospace; font-size: 13px;">{"}"}</div>
+                    </div>
+                    <div class="card">
+                        <h3
+                            style="font-family: monospace; color: var(--primary); font-size: 14px; margin-bottom: 20px;">
+                            // Stats</h3>
+                        <div id="statsContainer"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="container">
+                <div class="section-title">
+                    <span class="section-number">02.</span>
+                    <h2>habilidades[]</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="grid-4" id="skillsContainer"></div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <div class="container">
+                <div class="section-title">
+                    <span class="section-number">03.</span>
+                    <h2>experiencia.log</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="timeline" id="timelineContainer"></div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="container">
+                <div class="section-title">
+                    <span class="section-number">04.</span>
+                    <h2>projetos.git</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="grid-2" id="projectsContainer"></div>
+            </div>
+        </section>
+
+        <!-- AI Chat Section -->
+        <section id="ai-chat">
+            <div class="container">
+                <div class="section-title">
+                    <span class="section-number">05.</span>
+                    <h2>ai_chat.py</h2>
+                    <span style="color: var(--secondary);">✨</span>
+                    <div class="section-line"></div>
+                </div>
+                <div class="terminal-window" style="max-width: 700px; margin: 0 auto;">
+                    <div class="terminal-header">
+                        <div class="terminal-dot red"></div>
+                        <div class="terminal-dot yellow"></div>
+                        <div class="terminal-dot green"></div>
+                        <span
+                            style="font-family: monospace; font-size: 11px; color: var(--text-muted);">ai-recruiter-chat
+                            — bash</span>
+                    </div>
+                    <div
+                        style="padding: 12px 16px; background: rgba(16, 185, 129, 0.05); border-bottom: 1px solid var(--border);">
+                        <span style="font-family: monospace; font-size: 11px; color: var(--primary);">$</span>
+                        <span style="font-family: monospace; font-size: 12px;"> ./init_ai.sh --mode="recruiter"</span>
+                        <p style="font-family: monospace; font-size: 13px; margin-top: 8px;">👋 Olá! Sou o assistente de
+                            IA deste portfólio. Pergunte-me sobre habilidades, experiência ou disponibilidade.</p>
+                    </div>
+                    <div class="chat-messages" id="chatMessages">
+                        <div id="suggestionsContainer" style="margin-bottom: 16px;"></div>
+                        <div id="messageList"></div>
+                        <div id="typingIndicator" style="display: none;">
+                            <div class="typing-indicator"><span></span><span></span><span></span></div>
+                        </div>
+                    </div>
+                    <div style="border-top: 1px solid var(--border); padding: 12px; display: flex; gap: 8px;">
+                        <span style="color: var(--primary); font-family: monospace;">&gt;</span>
+                        <input type="text" id="chatInput" placeholder="Digite sua pergunta..."
+                            style="flex: 1; background: transparent; border: none; color: var(--text); font-family: monospace; font-size: 13px; outline: none;">
+                        <button id="sendBtn"
+                            style="background: rgba(16, 185, 129, 0.2); border: 1px solid rgba(16, 185, 129, 0.3); color: var(--primary); padding: 6px 12px; border-radius: 6px; cursor: pointer; font-family: monospace;">➤</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <div class="section-title" style="justify-content: center;">
+                    <span class="section-number">06.</span>
+                    <h2>contato.sh</h2>
+                </div>
+                <div class="card" style="max-width: 500px; margin: 0 auto; text-align: center;">
+                    <p style="font-family: monospace; color: var(--text-muted); margin-bottom: 32px;">
+                        <span style="color: var(--primary);">$</span> ./conectar.sh --modo="bora trocar uma ideia"
+                    </p>
+                    <div id="contactLinks"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="padding: 32px; text-align: center; border-top: 1px solid var(--border);">
+            <p style="font-family: monospace; font-size: 11px; color: var(--text-muted);">
+                <span style="color: var(--primary);">{">"}</span> Feito com <span
+                    style="color: var(--destructive);">♥</span> e muito <span
+                    style="color: var(--primary);">código</span> © 2024
+            </p>
+        </footer>
+    </main>
+
+    <!-- Modal for projects -->
+    <div id="projectModal" class="modal" style="display: none;"></div>
+
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="lightbox">
+        <div class="lightbox-container">
+            <button id="lightbox-close" class="lightbox-close" aria-label="Fechar galeria">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <button id="lightbox-prev" class="lightbox-nav prev" aria-label="Foto anterior">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="lightbox-content">
+                <div id="lightbox-slider" class="lightbox-slider"></div>
+            </div>
+
+            <button id="lightbox-next" class="lightbox-nav next" aria-label="Próxima foto">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <div class="lightbox-footer">
+                <div id="lightbox-counter" class="lightbox-counter">1/10</div>
+                <div class="lightbox-zoom">
+                    <button id="zoom-in" class="zoom-btn" aria-label="Aumentar zoom">
+                        <i class="fas fa-search-plus"></i>
+                    </button>
+                    <button id="zoom-out" class="zoom-btn" aria-label="Reduzir zoom">
+                        <i class="fas fa-search-minus"></i>
+                    </button>
+                    <button id="zoom-reset" class="zoom-btn" aria-label="Resetar zoom">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
