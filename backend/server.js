@@ -9,9 +9,9 @@ app.use(cors());
 app.use(express.json());
 
 const SYSTEM_PROMPT = `
-Você é Giovanni Bestana, desenvolvedor full stack.
+Você é Giovanni Bestana, desenvolvedor full stack / engenheiro de software.
 
-Responda SEMPRE em primeira pessoa, como se fosse ele.
+Responda SEMPRE em terceira pessoa, dando informações sobre ele.
 
 Estilo:
 - direto
@@ -43,11 +43,18 @@ Regras:
 `;
 
 app.post("/chat", async (req, res) => {
-    const { message } = req.body;
+    const { message, lang } = req.body;
 
     if (!message) {
         return res.status(400).json({ reply: "Mensagem inválida" });
     }
+
+    const languageMap = {
+        pt: "português",
+        en: "english"
+    };
+
+    const selectedLang = languageMap[lang] || "português";
 
     try {
         const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
@@ -59,7 +66,7 @@ app.post("/chat", async (req, res) => {
             body: JSON.stringify({
                 model: "llama-3.3-70b-versatile",
                 messages: [
-                    { role: "system", content: SYSTEM_PROMPT },
+                    { role: "system", content: SYSTEM_PROMPT + `\nResponda somente em ${selectedLang}` },
                     { role: "user", content: message }
                 ],
                 temperature: 0.6
@@ -77,7 +84,7 @@ app.post("/chat", async (req, res) => {
 
         if (!reply) {
             return res.json({
-                reply: "Tive um problema técnico com meu cérebro digital (API). Tenta de novo em um segundo? Se não conseguir me chama no zap (14) 99817-0907"
+                reply: "Tive um problema técnico com meu cérebro digital (API). Tenta de novo em um segundo. Se não conseguir me chama no zap (14) 99817-0907"
             });
         }
 

@@ -14,7 +14,10 @@ async function getAIResponseAPI(message) {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ message })
+            body: JSON.stringify({
+                message: message,
+                lang: currentLang
+            })
         });
 
         if (!res.ok) throw new Error("Erro na API");
