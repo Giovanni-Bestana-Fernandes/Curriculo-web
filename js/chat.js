@@ -5,7 +5,28 @@ import { t, currentLang } from './lang.js';
 //  CHAT STATE
 // ═══════════════════════════════════════════
 let chatMessages = [];
-let isTyping     = false;
+let isTyping = false;
+
+async function getAIResponseAPI(message) {
+    try {
+        const res = await fetch("http://localhost:3000/chat", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ message })
+        });
+
+        if (!res.ok) throw new Error("Erro na API");
+
+        const data = await res.json();
+        return data.reply;
+
+    } catch (err) {
+        console.error("Erro API:", err);
+        return null; // importante pro fallback
+    }
+}
 
 // ═══════════════════════════════════════════
 //  MESSAGES
@@ -49,7 +70,7 @@ function escapeHtml(text) {
 // ═══════════════════════════════════════════
 export function getAIResponseLocal(userMessage) {
     const msg = userMessage.toLowerCase();
-    
+
     // Usa a função getAIResponse do data.js que já lida com o idioma
     if (msg.includes('habilidade') || msg.includes('skill') || msg.includes('tecnologia') || msg.includes('stack') ||
         msg.includes('ability') || msg.includes('tech')) {
@@ -90,7 +111,7 @@ export function sendMessage() {
     if (isTyping) return;
 
     const input = document.getElementById('chatInput');
-    const text  = input?.value.trim();
+    const text = input?.value.trim();
     if (!text) return;
 
     addMessage('user', text);
@@ -99,20 +120,29 @@ export function sendMessage() {
 
     const typingEl = document.getElementById('typingIndicator');
     const suggestEl = document.getElementById('suggestionsContainer');
-    if (typingEl)  typingEl.style.display  = 'block';
+    if (typingEl) typingEl.style.display = 'block';
     if (suggestEl) suggestEl.innerHTML = '';
 
     const delay = 700 + Math.random() * 500;
-    setTimeout(() => {
-        const response = getAIResponseLocal(text);
+    setTimeout(async () => {
+
+        // tenta IA real
+        let response = await getAIResponseAPI(text);
+
+        // fallback inteligente
+        if (!response) {
+            response = getAIResponseLocal(text);
+        }
+
         addMessage('assistant', response);
+
         isTyping = false;
         if (typingEl) typingEl.style.display = 'none';
-        
-        // Mostra sugestões novamente após a resposta
+
         if (suggestEl && chatMessages.length > 0) {
             showSuggestionsInChat();
         }
+
     }, delay);
 }
 
@@ -125,15 +155,15 @@ function showSuggestionsInChat() {
     const container = document.getElementById('suggestionsContainer');
     if (!container) return;
     const lang = t();
-    
+
     // Só mostra sugestões se não houver mensagens ou se for o início
     if (chatMessages.length === 0 || (chatMessages.length === 1 && chatMessages[0].role === 'assistant')) {
         container.innerHTML = `
             <div style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);margin-bottom:8px;">${lang.chat.suggestionsLabel}</div>
             <div style="display:flex; flex-wrap:wrap; gap:8px;">
                 ${lang.chat.suggestions.map(s =>
-                    `<button class="suggestion-chip" data-question="${escapeHtml(s.question)}">${escapeHtml(s.label)}</button>`
-                ).join('')}
+            `<button class="suggestion-chip" data-question="${escapeHtml(s.question)}">${escapeHtml(s.label)}</button>`
+        ).join('')}
             </div>
         `;
         container.querySelectorAll('.suggestion-chip').forEach(btn => {
@@ -151,21 +181,21 @@ function showSuggestionsInChat() {
 export function showSuggestions() {
     showSuggestionsInChat();
 }
- 
+
 export function reloadSuggestions() {
     // Limpa histórico mas mantém a mensagem de boas-vindas
     chatMessages = [];
     const list = document.getElementById('messageList');
     if (list) list.innerHTML = '';
-    
+
     // Adiciona mensagem de boas-vindas no idioma atual
     const lang = t();
     addMessage('assistant', lang.chat.welcome);
-    
+
     // Mostra sugestões
     showSuggestionsInChat();
 }
- 
+
 
 // ═══════════════════════════════════════════
 //  MODAL DE PROJETO (legado, mantido por compatibilidade)
