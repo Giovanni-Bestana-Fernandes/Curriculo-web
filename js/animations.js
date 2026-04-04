@@ -47,9 +47,22 @@ export function initAnimations() {
 // ═══════════════════════════════════════════
 //  HERO TERMINAL — efeito digitado
 // ═══════════════════════════════════════════
+let currentTypingTimeout = null;
+let isTypingInProgress = false;
+
 export async function startHeroTyping() {
     const el = document.getElementById('heroTerminalContent');
     if (!el) return;
+
+    // Cancela qualquer animação em andamento
+    if (currentTypingTimeout) {
+        clearTimeout(currentTypingTimeout);
+        currentTypingTimeout = null;
+    }
+    
+    // Limpa o conteúdo atual
+    el.innerHTML = '';
+    isTypingInProgress = true;
 
     const sleep = ms => new Promise(r => setTimeout(r, ms));
 
@@ -71,8 +84,38 @@ export async function startHeroTyping() {
         await sleep(100);
     }
 
+    // Remove cursor antigo se existir
+    const oldCursor = el.querySelector('.terminal-cursor');
+    if (oldCursor) oldCursor.remove();
+    
     // Cursor piscando no final
     const cursor = document.createElement('span');
     cursor.className = 'terminal-cursor';
+    cursor.textContent = '█';
+    cursor.style.cssText = 'display:inline-block; margin-left:4px; animation: blink 1s step-end infinite;';
     el.appendChild(cursor);
+    
+    isTypingInProgress = false;
+}
+
+// Função para resetar o terminal (útil quando troca de idioma)
+export function resetHeroTerminal() {
+    if (isTypingInProgress) return;
+    startHeroTyping();
+}
+
+// Adiciona o CSS do cursor se não existir
+if (!document.querySelector('#terminal-cursor-style')) {
+    const style = document.createElement('style');
+    style.id = 'terminal-cursor-style';
+    style.textContent = `
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .terminal-cursor {
+            animation: blink 1s step-end infinite;
+        }
+    `;
+    document.head.appendChild(style);
 }
