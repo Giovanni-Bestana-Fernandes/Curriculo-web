@@ -31,9 +31,6 @@ function reRenderSections() {
     renderContact(portfolioData);
 }
 
-// ═══════════════════════════════════════════
-//  BOOTSTRAP
-// ═══════════════════════════════════════════
 document.addEventListener('DOMContentLoaded', () => {
 
     // ── Renderiza seções via dados ──────────

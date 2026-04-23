@@ -1,9 +1,5 @@
 import { openProjectGallery } from './gallery.js';
 
-// ═══════════════════════════════════════════
-//  RENDER FUNCTIONS
-// ═══════════════════════════════════════════
-
 export function renderStats(portfolioData) {
     const container = document.getElementById('statsContainer');
     if (!container) return;
