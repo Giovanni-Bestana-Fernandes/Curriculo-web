@@ -8,7 +8,7 @@
 }
 
 :root {
-    --bg-primary: #09090e;
+    --bg-primary: #1d1d26;
     --bg-card: #111117;
     --bg-card-hover: #161620;
     --border: #1e1e2a;
@@ -140,6 +140,9 @@ body {
     color: var(--text);
     text-decoration: none;
     letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
 }
 
 .nav-logo-bracket {
